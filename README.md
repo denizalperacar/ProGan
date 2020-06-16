@@ -41,6 +41,10 @@ sys.path.insert(0, os.path.abspath('{}/src/'.format(os.getcwd())))
 
 then import the generator and discriminator from their corresponding files.
 
+You can access the dataset here:
 
+https://drive.google.com/file/d/1f98t8iv7YZLk2sTBCsDqfiuV_NJVF4CI/view?usp=sharing
+
+Please dont forget to add the local directory of the dataset in config in train.py
 
 

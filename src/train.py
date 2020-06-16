@@ -27,7 +27,8 @@ config = {'channels':[128, 128, 128, 128, 128, 128], # must be len(config['sr]) 
           'critic_lambda':10.,
           'epsilon_drift':0.001,
           'dataset_dir':'/home/deniz/Desktop/data_set/CelebAMask-HQ/', 
-          'stat_format':'epoch {:4d} resolution {:4d} critic_loss {:6.4f} generator_loss {:6.4f} time {:6f}'}
+          'stat_format':'epoch {:4d} resolution {:4d} critic_loss {:6.4f} generator_loss {:6.4f} time {:6f}', 
+          'dataset_address':'/home/deniz/Desktop/data_set/CelebAMask-HQ/'}
 
 device = torch.device('cuda:0')
 
@@ -45,7 +46,7 @@ for level_index in range(start_level, len(config['sr'])):
 
     dataset_path = '{}CelebA_{}/'.format(config['dataset_dir'], config['sr'][level_index])
     transformation = Compose([ToTensor()])
-    dataset = ImageFolder('/home/deniz/Desktop/data_set/CelebAMask-HQ/CelebA_{}/'.format(config['sr'][level_index]), transform=transformation)
+    dataset = ImageFolder('{}/CelebA_{}/'.format(config['dataset_address'], config['sr'][level_index]), transform=transformation)
     dataloader = DataLoader(dataset, config['level_batch_size'][level_index], shuffle=True, num_workers=3)
 
     g_loss = [] 
