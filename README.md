@@ -20,7 +20,9 @@ This folder provides a re-implementation of this paper in PyTorch, developed as 
 Please see the jupyter notebook file [main.ipynb](main.ipynb) for a summary of paper, the implementation notes and our experimental results.
 
 Using the code is very easy.
+
 Just make sure that your current directory is ProGan/
+
 there you can use:
 
 $python src/train.py
@@ -32,7 +34,9 @@ If you want to change the hyper-parameters of the network you can change them th
 If the code will be used from jupyter you might add the following to the top of your code:
 
 import os
+
 import sys
+
 sys.path.insert(0, os.path.abspath('{}/src/'.format(os.getcwd())))
 
 then import the generator and discriminator from their corresponding files.
